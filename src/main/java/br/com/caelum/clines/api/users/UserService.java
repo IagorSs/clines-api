@@ -20,10 +20,10 @@ public class UserService {
     private final UserViewMapper viewMapper;
     private final UserFormMapper formMapper;
 
-    public UserView showUserByEmail(String email) {
+    public UserView showUserById(Long id) {
 
-        User user = repository.findByEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException("Cannot find aircraft"));
+        User user = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Cannot find user"));
 
         return viewMapper.map(user);
     }

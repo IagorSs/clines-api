@@ -22,9 +22,9 @@ public class UserController {
 
     private final UserService service;
 
-    @GetMapping("{email}")
-    UserView show(@PathVariable String email) {
-        return service.showUserByEmail(email);
+    @GetMapping("{id}")
+    UserView show(@PathVariable Long id) {
+        return service.showUserById(id);
     }
 
     @GetMapping
